@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\Task1\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SV.E2E.Test.Infrastructure\SV.E2E.Test.Infrastructure.csproj" />
   </ItemGroup>
 

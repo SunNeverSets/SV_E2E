@@ -18,5 +18,9 @@ namespace SV.E2E.Tests
         [StepArgumentTransformation]
         public ResetLoginFailParametersDto ToResetLoginFailParameters(Table table)
             => table.CreateInstance<ResetLoginFailParametersDto>();
+
+        [StepArgumentTransformation]
+        public List<string> ToListOfString(string str)
+            => str.Split(",").ToList();
     }
 }

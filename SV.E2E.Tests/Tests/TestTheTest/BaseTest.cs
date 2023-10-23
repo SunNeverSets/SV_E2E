@@ -11,6 +11,7 @@ namespace SV.E2E.Tests.Tests.TestTheTest
         [SetUp]
         public void SetUp()
         {
+            // I'd suggest install Driver Manager or download package with the Driver
             string strDriverPath = "path of driver";
             _driver = new ChromeDriver(strDriverPath);
             DriverManager.Driver = _driver;
