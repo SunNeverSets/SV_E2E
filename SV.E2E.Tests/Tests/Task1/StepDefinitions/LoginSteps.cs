@@ -1,4 +1,5 @@
-﻿using SV.E2E.Test.Infrastructure.Contexts;
+﻿using FluentAssertions;
+using SV.E2E.Test.Infrastructure.Contexts;
 using SV.E2E.Test.Infrastructure.Helpers;
 using TechTalk.SpecFlow;
 
@@ -16,10 +17,10 @@ namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
             _loginContext.LogIn(user);
         }
 
-        [Then(@"user sees ‘Please verify your credentials\.’ validation error on Login page")]
-        public void ThenUserSeesPleaseVerifyYourCredentials_ValidationErrorOnLoginPage()
+        [Then(@"user sees '([^']*)' validation error on Login page")]
+        public void ThenUserSeesPleaseVerifyYourCredentials_ValidationErrorOnLoginPage(string validationMessage)
         {
-            throw new PendingStepException();
+            _loginContext.GetValidationErrorMessage().Should().Be(validationMessage);
         }
     }
 }

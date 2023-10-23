@@ -18,5 +18,10 @@ namespace SV.E2E.Test.Infrastructure.Contexts
             _loginPage.PasswordTextField.SendKeys(user.Password);
             _loginPage.LoginButton.Click();
         }
+
+        public string GetValidationErrorMessage()
+        {
+            return _loginPage.ValidationMessageLabel.Text;
+        }
     }
 }

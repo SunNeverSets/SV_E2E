@@ -11,12 +11,13 @@ Scenario: Verify that user has access to tracking data
 
 Scenario: Verify that user can not login into application with invalid credentials
 	Given 'test.user@dummy.com' logged in to application
-	Then user sees ‘Please verify your credentials.’ validation error on Login page
+	Then user sees 'Please verify your credentials.' validation error on Login page
 
 Scenario Outline: Verify that user can navigate to page via tab with specific permissions
-	Given ‘<User>’ logged in to application
-	When user navigates to ‘<Tab>’
-	Then user is navigated to ‘<Url>’
+	Given '<User>' logged in to application
+	Then user sees the header with the following tabs '<AvailableTabs>'
+	When user navigates to '<Tab>' page
+	Then user is navigated to '<Url>'
 
 Examples:
 	| Tab  | Url        | User                     |

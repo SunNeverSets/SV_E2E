@@ -15,7 +15,7 @@ namespace SV.E2E.Test.Infrastructure.API.Endpoints
 
         public List<LoginFailureDto> GetLoginFailRecords(LoginFailParametersDto parameters)
         {
-            string url = $"session/loginfailtotal";
+            string url = $"api/loginfailtotal";
 
             var request = new RestRequest(url, Method.Get);
             request.AddQueryParameter("userName", parameters.UserName);
@@ -27,7 +27,7 @@ namespace SV.E2E.Test.Infrastructure.API.Endpoints
 
         public string PutLoginFailRecord(ResetLoginFailParametersDto parameters)
         {
-            string url = $"session/resetloginfailtotal";
+            string url = $"api/resetloginfailtotal";
 
             var request = new RestRequest(url, Method.Put);
             request.AddQueryParameter("userName", parameters.UserName);

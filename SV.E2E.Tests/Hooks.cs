@@ -6,16 +6,23 @@ namespace SV.E2E.Tests
     [Binding]
     public class Hooks
     {
-        [AfterScenario(Order = 999)]
+        [AfterScenario]
         public void CloseBrowser()
         {
-            DriverService.Driver.Close();
+            if (!IsAPIScenario())
+                DriverService.Driver.Close();
         }
 
-        [BeforeScenario(Order = 1)]
+        [BeforeScenario]
         public void StartDriver()
         {
-            DriverService.Driver = new Driver();
+            if (!IsAPIScenario())
+                DriverService.Driver = new Driver();
+        }
+
+        private bool IsAPIScenario()
+        {
+            return ScenarioContext.Current.ScenarioInfo.Tags.Contains("API_ONLY") || FeatureContext.Current.FeatureInfo.Tags.Contains("API_ONLY");
         }
     }
 }

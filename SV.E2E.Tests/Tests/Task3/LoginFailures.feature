@@ -1,4 +1,5 @@
-﻿Feature: LoginFailures
+﻿@API_ONLY
+Feature: LoginFailures
 
 Scenario: Verify Get Login Failures for user
 	When I call GET session/loginfailtotal with parameters:

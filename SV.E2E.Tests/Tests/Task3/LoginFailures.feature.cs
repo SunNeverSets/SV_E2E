@@ -21,12 +21,14 @@ namespace SV.E2E.Tests.Tests.Task3
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("LoginFailures")]
+    [NUnit.Framework.CategoryAttribute("API_ONLY")]
     public partial class LoginFailuresFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "API_ONLY"};
         
 #line 1 "LoginFailures.feature"
 #line hidden
@@ -80,7 +82,7 @@ namespace SV.E2E.Tests.Tests.Task3
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Get Login Failures for user", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 3
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -98,7 +100,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Shulha Volodymyr",
                             "",
                             ""});
-#line 4
+#line 5
  testRunner.When("I call GET session/loginfailtotal with parameters:", ((string)(null)), table1, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -107,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "Shulha Volodymyr",
                             "5"});
-#line 7
+#line 8
  testRunner.Then("the following login failures data are returned:", ((string)(null)), table2, "Then ");
 #line hidden
             }
@@ -121,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Reset Login Failures for user", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -135,7 +137,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "UserName"});
                 table3.AddRow(new string[] {
                             "Avril Lavigne"});
-#line 12
+#line 13
  testRunner.When("I call PUT session/resetloginfailtotal with parameters:", ((string)(null)), table3, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -146,7 +148,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Avril Lavigne",
                             "",
                             ""});
-#line 15
+#line 16
  testRunner.When("I call GET session/loginfailtotal with parameters:", ((string)(null)), table4, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -155,7 +157,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table5.AddRow(new string[] {
                             "Avril Lavigne",
                             "0"});
-#line 18
+#line 19
  testRunner.Then("the following login failures data are returned:", ((string)(null)), table5, "Then ");
 #line hidden
             }

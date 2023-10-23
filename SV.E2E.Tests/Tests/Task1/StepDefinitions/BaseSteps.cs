@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using SV.E2E.Test.Infrastructure.Contexts;
+using SV.E2E.Test.Infrastructure.Driver;
 using TechTalk.SpecFlow;
 
 namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
@@ -25,6 +26,12 @@ namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
         public void WhenUserNavigatesToTrackingDataPage(string tabName)
         {
             _baseContext.NavigateTo(tabName);
+        }
+
+        [Then(@"user is navigated to '([^']*)'")]
+        public void ThenUserIsNavigatedTo(string expectedUrl)
+        {
+            DriverService.Driver.GetWebDriver().Url.Should().EndWith(expectedUrl);
         }
     }
 }
