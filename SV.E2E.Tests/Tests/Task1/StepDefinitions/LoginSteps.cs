@@ -10,7 +10,7 @@ namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
     {
         private LoginContext _loginContext => new LoginContext();
 
-        [Given(@"'([^']*)' logged in to application")]
+        [Given(@"'([^']*)' user logged in to application")]
         public void GivenLoggedInToApplication(string userName)
         {
             var user = UsersStorage.Users[userName];
@@ -21,6 +21,12 @@ namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
         public void ThenUserSeesPleaseVerifyYourCredentials_ValidationErrorOnLoginPage(string validationMessage)
         {
             _loginContext.GetValidationErrorMessage().Should().Be(validationMessage);
+        }
+
+        [Then(@"user is present on login screen")]
+        public void ThenUserIsPresentOnLoginScreen()
+        {
+            _loginContext.IsPageLoaded();
         }
     }
 }

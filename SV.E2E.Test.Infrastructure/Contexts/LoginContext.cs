@@ -23,5 +23,10 @@ namespace SV.E2E.Test.Infrastructure.Contexts
         {
             return _loginPage.ValidationMessageLabel.Text;
         }
+
+        public bool IsPageLoaded()
+        {
+            return _loginPage.UserNameTextField.Displayed && _loginPage.PasswordTextField.Displayed;
+        }
     }
 }

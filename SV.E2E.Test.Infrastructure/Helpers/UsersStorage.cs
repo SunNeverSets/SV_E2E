@@ -6,10 +6,8 @@ namespace SV.E2E.Test.Infrastructure.Helpers
     {
         public static Dictionary<string, User> Users { get; } = new Dictionary<string, User>
         {
-            ["Default"] = new User("Admin", "admin123"),
-            ["test.user@dummy.com"] = new User("test.user@dummy.com", "12345"),
-            ["test.user.tab1@dummy.com"] = new User("test.user.tab1@dummy.com", "12345"),
-            ["test.user.tab2@dummy.com"] = new User("test.user.tab2@dummy.com", "12345"),
+            ["genuine"] = new User("genuine.user@dummy.com", "12345"),
+            ["non genuine"] = new User("non.genuine.user@dummy.com", "12345"),
         };
     }
 }

@@ -14,7 +14,7 @@ namespace SV.E2E.Tests.Tests.Task1.StepDefinitions
             _trackingContext = new TrackingContext();
         }
 
-        [Then(@"user sees the list of products")]
+        [Then(@"Tracking data page is opened")]
         public void ThenUserSeesTheListOfProducts()
         {
             _trackingContext.IsPageLoaded().Should().BeTrue();
